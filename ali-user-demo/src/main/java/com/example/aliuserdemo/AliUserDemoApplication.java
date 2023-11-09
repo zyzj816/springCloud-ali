@@ -7,7 +7,7 @@ import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
 @EnableFeignClients
-
+@ComponentScan("com.example.aliuserdemo.*")
 public class AliUserDemoApplication {
 
     public static void main(String[] args) {
