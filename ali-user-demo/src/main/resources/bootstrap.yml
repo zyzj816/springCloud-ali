@@ -20,10 +20,19 @@ spring:
     loadbalancer:
       ribbon:
         enabled: false
+    sentinel:
+      transport:
+        dashboard: localhost:8080 #配置Sentinel dashboard地址
 # 使用spring loadbalancer，弃用ribbon
 ribbon:
   nacos:
     enabled: false
+#sentinel开启
+feign:
+  sentinel:
+    enabled: true
+
+
 
 
 

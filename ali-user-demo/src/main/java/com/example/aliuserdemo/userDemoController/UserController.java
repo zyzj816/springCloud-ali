@@ -1,11 +1,16 @@
 package com.example.aliuserdemo.userDemoController;
 
+import com.alibaba.csp.sentinel.annotation.SentinelResource;
+import com.alibaba.csp.sentinel.slots.block.BlockException;
 import com.example.aliuserdemo.service.UserOrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.server.reactive.ServerHttpRequest;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.context.support.HttpRequestHandlerServlet;
 
 import javax.annotation.Resource;
 
@@ -26,8 +31,8 @@ public class UserController {
     }
 
     @GetMapping("getOrder")
-    public String getOrder(){
-        return userOrderService.getDemoOrder("123");
+    public String getOrder(String userId, String name, ServerHttpRequest request){
+        return userOrderService.getDemoOrder(userId,name,request);
     }
 
     @GetMapping("getDemoOrder")
@@ -35,4 +40,5 @@ public class UserController {
         System.out.println(orderId);
         return "order123456";
     }
+
 }

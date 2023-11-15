@@ -1,0 +1,29 @@
+server:
+  port: 9010
+
+spring:
+  application:
+    name: ali-demo-gateway
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+        namespace: demo
+        group: demo
+    gateway:
+      routes:
+        - id: ali-user-demo           #路由的ID，没有固定规则但要求唯一，建议配合服务名
+          uri: http://localhost:9090    #匹配后提供服务的路由地址
+          predicates:
+            - Path=/user/**    #断言，路径相匹配的进行路由
+
+        - id: ali-demo-order
+          uri: http://localhost:9091
+          predicates:
+            - Path=/order/**
+      discovery:
+        locator:
+          enabled: true
+
+
+
