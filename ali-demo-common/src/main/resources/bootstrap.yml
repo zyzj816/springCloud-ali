@@ -1,0 +1,18 @@
+server:
+  port: 9092
+
+spring:
+  application:
+    name: ali-demo-common
+  cloud:
+    nacos:
+      config:
+        server-addr: localhost:8848
+        namespace: demo
+        file-extension: yml
+        extension-configs[0]:
+          data-id: ali-user-demo.yml
+          group: demo
+      discovery:
+        namespace: demo
+        group: demo

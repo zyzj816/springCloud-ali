@@ -18,6 +18,11 @@
     </properties>
     <dependencies>
 
+        <dependency>
+            <groupId>com.example</groupId>
+            <artifactId>ali-demo-common</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
     </dependencies>
 
     <build>
