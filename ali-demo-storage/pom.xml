@@ -8,48 +8,19 @@
         <artifactId>springCloud-ali</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
-
-    <artifactId>ali-demo-gateway</artifactId>
-
     <groupId>com.example</groupId>
+    <artifactId>ali-demo-storage</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>war</packaging>
-    <name>ali-demo-gateway</name>
-    <description>ali-demo-gateway</description>
+    <name>ali-demo-storage</name>
+    <description>ali-demo-storage</description>
     <properties>
         <java.version>8</java.version>
     </properties>
-
     <dependencies>
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-gateway</artifactId>
-            <version>2.2.1.RELEASE</version>
-        </dependency>
-        <dependency>
-            <groupId>com.example</groupId>
-            <artifactId>ali-demo-common</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
-        <!-- jwt -->
-        <dependency>
-            <groupId>io.jsonwebtoken</groupId>
-            <artifactId>jjwt</artifactId>
-            <version>0.9.1</version>
-        </dependency>
-
-
-
-
-        <dependency>
-            <groupId>com.alibaba</groupId>
-            <artifactId>druid</artifactId>
-            <version>1.0.9</version>
-        </dependency>
 
 
     </dependencies>
-
     <build>
         <plugins>
             <plugin>
@@ -58,5 +29,4 @@
             </plugin>
         </plugins>
     </build>
-
 </project>

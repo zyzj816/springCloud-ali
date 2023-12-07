@@ -11,6 +11,9 @@
     <modules>
         <module>ali-user-demo</module>
         <module>ali-demo-gateway</module>
+        <module>ali-demo-storage</module>
+        <module>ali-demo-order</module>
+        <module>ali-demo-common</module>
     </modules>
 
     <parent>
@@ -43,6 +46,24 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/com.mybatis-flex/mybatis-flex-spring-boot-starter -->
+        <dependency>
+            <groupId>com.mybatis-flex</groupId>
+            <artifactId>mybatis-flex-spring-boot-starter</artifactId>
+            <version>1.5.8</version>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid</artifactId>
+            <version>1.2.15</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/com.alibaba.cloud/spring-cloud-starter-alibaba-seata -->
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-seata</artifactId>
+            <version>2.2.5.RELEASE</version>
         </dependency>
 
 
@@ -85,7 +106,7 @@
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-openfeign</artifactId>
-            <version>2.2.6.RELEASE</version>
+            <version>2.2.3.RELEASE</version>
         </dependency>
 
         <!--        熔断降级-->

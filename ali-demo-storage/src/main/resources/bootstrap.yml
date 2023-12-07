@@ -1,7 +1,22 @@
 server:
-  port: 9091
+  port: 9092
 
 spring:
+  application:
+    name: ali-demo-storage
+  cloud:
+    nacos:
+      config:
+        server-addr: localhost:8848
+        namespace: demo
+        file-extension: yml
+        extension-configs[0]:
+          data-id: ali-user-demo.yml
+          group: demo
+      discovery:
+        namespace: demo
+        group: demo
+
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
     url: jdbc:mysql://localhost:3306/mdx_storage?autoRec&useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8
@@ -20,35 +35,6 @@ spring:
     testOnReturn: false
     poolPreparedStatements: false
     maxPoolPreparedStatementPerConnectionSize: 200
-  application:
-    name: ali-demo-order
-  cloud:
-    nacos:
-      config:
-        server-addr: localhost:8848
-        namespace: demo
-        file-extension: yml
-        extension-configs[0]:
-          data-id: ali-user-demo.yml
-          group: demo
-      discovery:
-        namespace: demo
-        group: demo
-  # 使用spring loadbalancer，弃用ribbon
-    loadbalancer:
-      ribbon:
-        enabled: false
-    sentinel:
-      transport:
-        dashboard: localhost:8080 #配置Sentinel dashboard地址
-# 使用spring loadbalancer，弃用ribbon
-ribbon:
-  nacos:
-    enabled: false
-#sentinel开启
-feign:
-  sentinel:
-    enabled: true
 seata:
   tx-service-group: my_test_tx_group
   enabled: true
@@ -59,5 +45,7 @@ seata:
       server-addr: localhost:8848
       group : seata-demo
       namespace: demo #注册在nacos命名空间
+
+
 
 
