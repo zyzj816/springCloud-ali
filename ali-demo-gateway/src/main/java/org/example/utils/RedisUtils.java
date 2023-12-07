@@ -15,13 +15,9 @@ import java.util.concurrent.TimeUnit;
 @Component
 @Slf4j
 public class RedisUtils {
-    private RedisTemplate<String, Object> redisTemplate;
-
-    @Autowired
-    public void setRedisTemplate(RedisTemplate<String, Object> redisTemplate) {
-        this.redisTemplate = redisTemplate;
-    }
-    public RedisUtils() {
+    private static RedisTemplate<String, Object> redisTemplate;
+    public static RedisTemplate<String, Object> getRedisTemplate() {
+        return redisTemplate;
     }
 
     // =============================common============================
